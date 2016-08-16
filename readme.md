@@ -88,6 +88,8 @@ I called it:
 cardDirective.js
 ```
 
+Don't forget to include this JS file in your `index.html` file.
+
 #### Directives are as easy as...
 
 Just like controllers and routing configurations, the first line is a simple extension of `angular`:
@@ -226,7 +228,7 @@ And lastly, in our `index.html`, let's finally use our custom directive. So exci
 
 ```html
 <!-- index.html -->
-<div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsCtrl.questionsList" >
+<div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsController.questionsList" >
   <wdi-card></wdi-card>
 </div>
 ```
@@ -272,9 +274,9 @@ And finally, in `scripts/cardDirective.js`:
 
 ```js
 angular.module('CardsAgainstAssembly')
-  .directive('WdiCard', WdiCard);
+  .directive('wdiCard', wdiCard);
 
-function WdiCard(){
+function wdiCard(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class
     restrict: 'E',
